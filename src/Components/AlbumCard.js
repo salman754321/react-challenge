@@ -15,14 +15,6 @@ function ProblemCard({item}){
             </div>
             <div className="is-50">
                 <h3>{item.title}</h3>
-                <p>
-                    {item.user['name']} - {item.user['email']}
-                </p>
-                <p>
-                    {item.user['phone']} - {item.user['address']['city']}
-                </p>
-                <br />
-                <p>{item.user['company']['name']}</p>
             </div>
         </Link>
     );

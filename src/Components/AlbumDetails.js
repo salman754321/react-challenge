@@ -6,21 +6,7 @@ const ALBUM_DETAIL = gql`
 query($id: ID!){
  album(id : $id){
       id
-      title
-      user{
-        name
-        username
-        email
-        address{
-          city
-        }
-        phone
-        website
-        company{
-          name
-        }
-      }
-      
+      title 
     }
 }
 `;
@@ -57,14 +43,7 @@ function AlbumDetails(){
                 <div className="album-detailsBody is-card">
                     <div className="album-outline-container">
                         <div className="album-outline">
-                            <b>Name: </b> <span>{data['album']['user'].name}</span> <br/> <br/>
-                            <b>User name: </b> <span>{data['album']['user']['username']}</span><br/> <br/>
-                            <b>Email: </b> <span>{data['album']['user']['email']}</span><br/> <br/>
-                            <b>Phone: </b> <span>{data['album']['user']['phone']}</span><br/> <br/>
-                            <b>Address: </b> <span>{data['album']['user']['address'].city}</span><br/> <br/>
-                            <b>Website: </b> <span>{data['album']['user']['website']}</span><br/> <br/>
-                            <b>Company: </b> <span>{data['album']['user']['company'].name}</span><br/> <br/>
-
+                            <p>{data['album'].title}</p>
                         </div>
                     </div>
                 </div>

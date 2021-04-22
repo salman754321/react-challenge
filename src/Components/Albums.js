@@ -8,18 +8,7 @@ query{
     data{
       id
       title
-      user{
-        name
-        email
-        address{
-          city
-        }
-        phone
-        company{
-          name
-        }
-      }
-      
+     
     }
   }
 }
