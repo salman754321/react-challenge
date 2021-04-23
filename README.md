@@ -13,8 +13,8 @@
 
 # Requirements
 
-* Pass id to AlbumDetails component to Fetch and display Album details
-* Make the search in Top Menu functional (Search by Album title)
+* Pass id to UserDetails component to Fetch and display User details
+* Make the search in Top Menu functional (Search by User name)
 
 
 
@@ -31,5 +31,8 @@
 
 * UI/UX for all elements, including previews (mobile responsive)
 * GraphQl Client connected 
-* list of Albums displayed in Albums.js
+* list of Users displayed in Users.js
 
+
+# Setup
+* Run `node index.js` to start the server on localhost:8000/graphql
