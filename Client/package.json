@@ -2,7 +2,6 @@
   "name": "react_challenge",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Yishaq13/React-Challenge.git",
   "dependencies": {
     "-": "0.0.1",
     "@apollo/client": "^3.3.15",
