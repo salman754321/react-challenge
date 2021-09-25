@@ -5,7 +5,7 @@ function UserCard({item}){
 
     return (
         <Link
-            to={"/User"}
+            to={`/User/${item.id}`} 
             className={"card-margin align-left is-row is-card"}
         >
             <div className="is-50">

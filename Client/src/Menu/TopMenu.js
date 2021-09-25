@@ -1,7 +1,7 @@
 import React from 'react'
 import logohere from '../Images/logohere.png'
 
-function TopMenu(){
+function TopMenu({Name , setName}){
     return (
         <div className="top-menu is-shadow-2">
             <div className="menu-logo-container">
@@ -14,6 +14,8 @@ function TopMenu(){
                     type="search"
                     name="name"
                     autoComplete="off"
+                    value={Name}
+                    onChange={(e)=>setName(e.target.value)}
                 />
             </div>
         </div>

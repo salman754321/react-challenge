@@ -14,9 +14,9 @@ const ALL_USERS = gql`
   }
 `;
 
-function Users(){
-
-
+function Users({Name}){
+let  filtered=null;
+console.log(Name)
     //Passing query to useQuery hook to fetch data
     const{data, loading, error, networkStatus} = useQuery(ALL_USERS, {fetchPolicy: "cache-and-network"})
 
@@ -29,9 +29,22 @@ function Users(){
         return `Error! ${error}`;
     else if(data)
         console.log(data)
+        if(Name!==""){
+         filtered =data.getAllUsers.filter(item => item.firstName.includes(Name))
+
+        }else{
+            filtered=data.getAllUsers
+        }
+
+
+
+
         return(
+
+
+                
             <div className="is-scrollable-list">
-                {data ? data.getAllUsers.map((item) => (
+                {data ? filtered.map((item) => (
                     <UserCard
                         key={item.id}
                         item={item}

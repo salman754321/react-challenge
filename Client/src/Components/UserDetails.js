@@ -16,8 +16,9 @@ query($id: Int!){
 
 function UserDetails(props){
 
-    //Pass the id to the Query to fetch details of the related Album
-    const id = null
+    //Pass the id to the Query to fetch details of the related Album\
+    const id = props.id;
+    console.log(props.id)
 
     const{data, loading, error, networkStatus} = useQuery(USER_DETAIL,{
         variables: {id},

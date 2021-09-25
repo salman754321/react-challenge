@@ -14,9 +14,20 @@ import {
 
 function App() {
 
+const [Name , setName] = useState("");
+
+  const SelectedUserDetail=({match})=>{
+    console.log(1,match)
+      let id = parseInt(match.params.id,10);
+    console.log(id);
+    return(
+  
+    <UserDetails id={id} />
+    )
+  }
   //State toggles the navigation menu
   const [collapse, setCollapse] = useState(false)
-
+  
   const handleCollapse =(e) =>{
     e.preventDefault()
     setCollapse(v => !v)
@@ -62,7 +73,7 @@ function App() {
 
 
           {/* Top menu of the page  */}
-          <TopMenu/>
+          <TopMenu Name ={Name} setName={setName}/>
 
           {/* Main page to display information  where the page switch takes place*/}
           <div className={page}>
@@ -70,11 +81,14 @@ function App() {
               <div className="is-page-content">
                 <Switch>
                   <Route exact path="/">
-                    <Users/>
+                    <Users Name={Name }/>
                   </Route>
-                  <Route path="/User" >
-                    <UserDetails/>
-                  </Route>
+                    <Route path="/User/:id" component={({match})=> <UserDetails id={parseInt(match.params.id,10)} />}>
+                     
+                    </Route>
+                {/*  <Route exact path="/User/:id" component={SelectedUserDetail} / > */}
+                  
+                  
                 </Switch>
               </div>
             </div>
